@@ -1,6 +1,10 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+
+
 class calculator {
     public static void main(String[] args) {
+        ArrayList<String> history = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         char choice;
 
@@ -22,35 +26,51 @@ class calculator {
             switch (operator) {
                 case '+':
                     result = num1 + num2;
+                    history.add(num1 + " + " + num2 + " = " + result);
                     System.out.println("Result: " + result);
                     break;
 
                 case '-':
                     result = num1 - num2;
+                    history.add(num1 + " - " + num2 + " = " + result);
                     System.out.println("Result: " + result);
                     break;
 
                 case '*':
                     result = num1 * num2;
+                    history.add(num1 + " * " + num2 + " = " + result);
                     System.out.println("Result: " + result);
                     break;
                 case '%':
-                    System.out.println("Result = " + (num1 % num2));
+                    result = num1 % num2;
+                    history.add(num1 + " % " + num2 + " = " + result);
+                    System.out.println("Result: " + result);
                     break;
 
                 case '/':
                     if (num2 != 0) {
                         result = num1 / num2;
+                        history.add(num1 + " / " + num2 + " = " + result);
                         System.out.println("Result: " + result);
                     } else {
                         System.out.println("Error: Division by zero is not allowed.");
                     }
                     break;
                 case 's':
-                    System.out.println("Square Root = " + Math.sqrt(num1));
+                    result = Math.sqrt(num1);
+                    history.add("sqrt(" + num1 + ") = " + result);
+                    System.out.println("Square Root = " + result);
                     break;
                 case '^':
-                    System.out.println("Result = " + Math.pow(num1, num2));
+                    result = Math.pow(num1, num2);
+                    history.add(num1 + " ^ " + num2 + " = " + result);
+                    System.out.println("Result = " + result);
+                    break;
+                case 'h':
+                    System.out.println("Calculation History:");
+                    for (String record : history) {
+                        System.out.println(record);
+                    }
                     break;
 
                 default:
