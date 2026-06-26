@@ -1,9 +1,77 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import javax.swing.*;
 
 
 class calculator {
     public static void main(String[] args) {
+
+        JFrame frame = new JFrame("Calculator");
+        frame.setSize(300, 400);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+
+        JTextField display = new JTextField();
+        frame.add(display);
+
+        JButton button1 = new JButton("1");
+        JButton button2 = new JButton("2");
+        JButton button3 = new JButton("3");
+        JButton button4 = new JButton("4"); 
+        JButton button5 = new JButton("5");
+        JButton button6 = new JButton("6");
+        JButton button7 = new JButton("7");
+        JButton button8 = new JButton("8");
+        JButton button9 = new JButton("9");
+        JButton button0 = new JButton("0");
+        JButton buttonAdd = new JButton("+");
+        JButton buttonSubtract = new JButton("-");
+        JButton buttonMultiply = new JButton("*");
+        JButton buttonDivide = new JButton("/");
+        JButton buttonModulo = new JButton("%");
+        JButton buttonSqrt = new JButton("sqrt");
+        JButton buttonPower = new JButton("pow");
+        JButton buttonHistory = new JButton("History");
+
+        frame.setLayout(new java.awt.GridLayout(5,4));
+        frame.add(button1);
+        frame.add(button2);
+        frame.add(button3);
+        frame.add(button4);
+        frame.add(button5);
+        frame.add(button6);
+        frame.add(button7);
+        frame.add(button8);
+        frame.add(button9);
+        frame.add(button0);
+        frame.add(buttonAdd);
+        frame.add(buttonSubtract);
+        frame.add(buttonMultiply);
+        frame.add(buttonDivide);
+        frame.add(buttonModulo);
+        frame.add(buttonSqrt);
+        frame.add(buttonPower);
+        frame.add(buttonHistory);
+
+        button1.addActionListener(e -> display.setText(display.getText() + "1"));
+        button2.addActionListener(e -> display.setText(display.getText() + "2"));
+        button3.addActionListener(e -> display.setText(display.getText() + "3"));
+        button4.addActionListener(e -> display.setText(display.getText() + "4"));
+        button5.addActionListener(e -> display.setText(display.getText() + "5"));
+        button6.addActionListener(e -> display.setText(display.getText() + "6"));
+        button7.addActionListener(e -> display.setText(display.getText() + "7"));
+        button8.addActionListener(e -> display.setText(display.getText() + "8"));
+        button9.addActionListener(e -> display.setText(display.getText() + "9"));
+        button0.addActionListener(e -> display.setText(display.getText() + "0"));
+        buttonAdd.addActionListener(e -> display.setText(display.getText() + "+"));
+        buttonSubtract.addActionListener(e -> display.setText(display.getText() + "-"));
+        buttonMultiply.addActionListener(e -> display.setText(display.getText() + "*"));
+        buttonDivide.addActionListener(e -> display.setText(display.getText() + "/"));
+        buttonModulo.addActionListener(e -> display.setText(display.getText() + "%"));
+        buttonSqrt.addActionListener(e -> display.setText(display.getText() + "sqrt("));
+        buttonPower.addActionListener(e -> display.setText(display.getText() + "^"));
+        buttonHistory.addActionListener(e -> display.setText(display.getText() + "History"));
+
         ArrayList<String> history = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         char choice = 'n';
